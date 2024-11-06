@@ -213,6 +213,12 @@ router.post(
       conversation.title =
         conversation && !conversation.title ? null : conversation?.title || 'New Chat';
 
+      if (client.options.attachments) {
+        userMessage.files = client.options.attachments;
+        conversation.model = endpointOption.modelOptions.model;
+        delete userMessage.image_urls;
+      }
+
       sendMessage(res, {
         title: conversation.title,
         final: true,
