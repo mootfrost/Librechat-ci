@@ -11,10 +11,10 @@ jobs:
         include:
           - target: api-build
             file: Dockerfile.multi
-            image_name: rc-librechat-api
+            image_name: librechat-api
           - target: node
             file: Dockerfile
-            image_name: rc-librechat
+            image_name: librechat
 
     steps:
       - name: Checkout
